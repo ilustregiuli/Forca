@@ -5,7 +5,8 @@ public class Forca {
 	private String word;
 	private int tries;
 	
-	public Forca() {
+	public Forca(String word) {
+		this.word = word;
 		System.out.println("    ");
 		System.out.println("																");
 		System.out.println("    *************												");
@@ -20,11 +21,12 @@ public class Forca {
 		System.out.println("    *");
 		System.out.println("    *");
 		System.out.println(" *********");
+		int charsWord = this.word.length();
+		System.out.println(charsWord);
 	}
+
 	
-	public String raffleWord (String word) {
-		this.word = word;
-		return this.word;
-	}
+	
+	
 
 }
