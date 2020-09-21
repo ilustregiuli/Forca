@@ -1,9 +1,12 @@
 package main;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Forca {
 	
 	private String word;
-	private int tries;
+	private int tries = 0;
 	
 	public Forca(String word) {
 		this.word = word;
@@ -33,9 +36,24 @@ public class Forca {
 				wSpace[i] = '_';
 			}
 		}
-		
 		String s = new String(wSpace);
 		return s;
+	}
+	
+	public void chooseLetter() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		char [] wordChar = this.word.toCharArray();
+		while(this.tries < 6) {
+			System.out.println("Choose a letter: ");
+			char c = (char) System.in.read();
+			for(int i = 0; i < wordChar.length; i++) {
+				if(wordChar[i] == c) {
+					
+				}
+			}
+		}
+		
+		sc.close();
 	}
 	
 	
