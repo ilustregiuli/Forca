@@ -7,6 +7,7 @@ public class Forca {
 	
 	private String word;
 	private int tries = 0;
+	private char[] wSpace;
 	
 	public Forca(String word) {
 		this.word = word;
@@ -24,11 +25,11 @@ public class Forca {
 		System.out.println("    *");
 		System.out.println("    *");
 		System.out.println(" *********");
-		System.out.println(this.charToSpace(word));
+		
 	}
 
-	private String charToSpace(String w) {
-		char [] wSpace = w.toCharArray();
+	private void charToSpace(String w) {
+		this.wSpace = w.toCharArray();
 		for(int i =0; i < w.length(); i ++) {
 			if(wSpace[i] == ' ') {
 				wSpace[i] = ' ';
@@ -36,22 +37,26 @@ public class Forca {
 				wSpace[i] = '_';
 			}
 		}
-		String s = new String(wSpace);
-		return s;
-	}
+	}	
 	
 	public void chooseLetter() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		char [] wordChar = this.word.toCharArray();
-		while(this.tries < 6) {
-			System.out.println("Choose a letter: ");
-			char c = (char) System.in.read();
-			for(int i = 0; i < wordChar.length; i++) {
-				if(wordChar[i] == c) {
-					
-				}
+		this.charToSpace(this.word); 			//this method create a blank space copy vector of "word"
+		System.out.println("Choose a letter: ");
+		char c = (char) System.in.read();
+		for(int i = 0; i < wordChar.length; i++) {
+			if(wordChar[i] == c) {
+				this.wSpace[i] = c;
+				
 			}
 		}
+		
+	/*	while(this.tries < 6) {
+			
+			
+			
+		}		*/
 		
 		sc.close();
 	}
