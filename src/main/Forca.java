@@ -48,7 +48,7 @@ public class Forca {
 		for(int i = 0; i < wordChar.length; i++) {
 			if(wordChar[i] == c) {
 				this.wSpace[i] = c;
-				
+				System.out.println(this.wSpace);
 			}
 		}
 		
