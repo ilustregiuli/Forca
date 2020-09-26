@@ -9,8 +9,8 @@ public class Forca {
 	private int tries = 0;
 	private char[] wSpace;
 	
-	public Forca(String word) {
-		this.word = word;
+	public Forca() {
+		// draw the gallows
 		System.out.println("    ");
 		System.out.println("																");
 		System.out.println("    *************												");
@@ -25,25 +25,42 @@ public class Forca {
 		System.out.println("    *");
 		System.out.println("    *");
 		System.out.println(" *********");
+		//method to raffle 
+		RandomWord rw = new RandomWord();
+		this.word = rw.getRandomWord();
+		System.out.println("Choose a letter: ");
+		System.out.println((this.charToSpace(this.word)));
 		
 	}
 
-	private void charToSpace(String w) {
-		this.wSpace = w.toCharArray();
-		for(int i =0; i < w.length(); i ++) {
-			if(wSpace[i] == ' ') {
-				wSpace[i] = ' ';
-			} else {
-				wSpace[i] = '_';
+	private String charToSpace(String w) {
+		
+		int letters = w.length() + (w.length() -1);
+		this.wSpace = new char[letters];
+		int nextPos = 0;
+		int tamanho = w.length();
+		for(int i = 0; i < w.length(); i ++) {
+			
+			char c = w.charAt(i);
+			
+			if(c != ' ') {
+				wSpace[nextPos] = c;
+				nextPos ++;
 			}
-		}
+				if(nextPos < letters) {
+					wSpace[nextPos] = ' ';
+					nextPos ++;
+				}
+			} 
+		
+		return new String(wSpace);
 	}	
 	
-	public void chooseLetter() throws IOException {
+/*	public void chooseLetter() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		char [] wordChar = this.word.toCharArray();
 		this.charToSpace(this.word); 			//this method create a blank space copy vector of "word"
-		System.out.println("Choose a letter: ");
+		
 		
 		while(tries < 6) {
 			char c = (char) System.in.read();
@@ -54,15 +71,8 @@ public class Forca {
 			}
 			System.out.println(this.wSpace);
 			tries += 1;
-		}
-	/*	while(this.tries < 6) {
-			
-			
-			
-		}		*/
-		
-		sc.close();
-	}
+		}  		*/
+
 	
 	
 
