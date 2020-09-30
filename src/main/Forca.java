@@ -56,24 +56,4 @@ public class Forca {
 		return new String(wSpace);
 	}	
 	
-/*	public void chooseLetter() throws IOException {
-		Scanner sc = new Scanner(System.in);
-		char [] wordChar = this.word.toCharArray();
-		this.charToSpace(this.word); 			//this method create a blank space copy vector of "word"
-		
-		
-		while(tries < 6) {
-			char c = (char) System.in.read();
-			for(int i = 0; i < wordChar.length; i++) {
-				if(wordChar[i] == c) {
-					this.wSpace[i] = c;
-				}
-			}
-			System.out.println(this.wSpace);
-			tries += 1;
-		}  		*/
-
-	
-	
-
-}
+}	
