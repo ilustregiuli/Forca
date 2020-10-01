@@ -29,11 +29,12 @@ public class Forca {
 		RandomWord rw = new RandomWord();
 		this.word = rw.getRandomWord();
 		System.out.println("Choose a letter: ");
-		System.out.println((this.charToSpace(this.word)));
+		System.out.println((this.putSpaceWord(this.word)));
+		System.out.println(this.convertChartoUnderscore((this.putSpaceWord(this.word))));
 		
 	}
 
-	private String charToSpace(String w) {
+	private String putSpaceWord(String w) {
 		
 		int letters = w.length() + (w.length() -1);
 		this.wSpace = new char[letters];
@@ -56,6 +57,18 @@ public class Forca {
 		return new String(wSpace);
 	}	
 	
-	
+	public String convertChartoUnderscore(String w) {
+		int letters = w.length();
+		char [] charUnder = new char[letters];
+		
+		for(int i =0; i < w.length(); i++) {
+			char c = w.charAt(i);
+			if(c != ' ') {
+				charUnder[i] = '_';
+			}
+		}
+		return new String(charUnder);
+		
+	}
 	
 }	
