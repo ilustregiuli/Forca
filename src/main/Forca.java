@@ -38,22 +38,24 @@ public class Forca {
 		int letters = w.length() + (w.length() -1);
 		this.wSpace = new char[letters];
 		int nextPos = 0;
-		int tamanho = w.length();
-		for(int i = 0; i < w.length(); i ++) {
+		
+		for(int i = 0; i < w.length(); i ++) { //"for" to run characters of the word
 			
-			char c = w.charAt(i);
+			char c = w.charAt(i);		// "c" is the letter in word character "i"
 			
-			if(c != ' ') {
-				wSpace[nextPos] = c;
-				nextPos ++;
+			if(c != ' ') {				//if "c" not blank
+				wSpace[nextPos] = c;	// new vector in "i" position gets "c"
+				nextPos ++;				// and then "nextPos" go to the next for don't repeat same letter
 			}
-				if(nextPos < letters) {
-					wSpace[nextPos] = ' ';
+				if(nextPos < letters) {		// if next position smaller than number of letters
+					wSpace[nextPos] = ' ';  // next position gets a space blank to separated letters
 					nextPos ++;
 				}
 			} 
 		
 		return new String(wSpace);
 	}	
+	
+	
 	
 }	
