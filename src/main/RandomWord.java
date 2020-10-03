@@ -8,16 +8,16 @@ public class RandomWord {
 	
 	public RandomWord () {
 		
-		String w1 = "brasil";
-		String w2 = "argentina";
-		String w3 = "japao";
-		String w4 = "estados unidos";
-		String w5 = "alemanha";
-		String w6 = "italia";
-		String w7 = "russia";
-		String w8 = "africa do sul";
-		String w9 = "egito";
-		String w10 = "paraguai";
+		String w1 = "b r a s i l";
+		String w2 = "a r g e n t i n a";
+		String w3 = "j a p a o";
+		String w4 = "e s t a d o s u n i d o s";
+		String w5 = "a l e m a n h a";
+		String w6 = "i t a l i a";
+		String w7 = "r u s s i a";
+		String w8 = "a f r i c a d o s u l";
+		String w9 = "e g i t o";
+		String w10 = "p a r a g u a i";
 		
 		Random r = new Random();
 		int x = r.nextInt(10) + 1;
