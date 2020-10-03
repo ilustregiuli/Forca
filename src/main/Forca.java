@@ -1,6 +1,5 @@
 package main;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Forca {
@@ -8,6 +7,7 @@ public class Forca {
 	private String word;
 	private int tries = 0;
 	private char[] wSpace;
+	private char[] charUnder;
 	
 	public Forca() {
 		// draw the gallows
@@ -28,16 +28,20 @@ public class Forca {
 		//method to raffle 
 		RandomWord rw = new RandomWord();
 		this.word = rw.getRandomWord();
-		System.out.println("Choose a letter: ");
+		
 		System.out.println((this.putSpaceWord(this.word)));
 		System.out.println(this.convertChartoUnderscore((this.putSpaceWord(this.word))));
+		System.out.println(" ");
+		System.out.println("Choose a letter: ");
+		this.pickTheChar(this.word);
+		
 		
 	}
 
 	private String putSpaceWord(String w) {
 		
-		int letters = w.length() + (w.length() -1);
-		this.wSpace = new char[letters];
+		int letters = w.length() + (w.length() -1); //auxiliar var to count letters of the word plus spaces between hers (w.length -1)
+		this.wSpace = new char[letters]; 			// 
 		int nextPos = 0;
 		
 		for(int i = 0; i < w.length(); i ++) { //"for" to run characters of the word
@@ -53,22 +57,41 @@ public class Forca {
 					nextPos ++;
 				}
 			} 
-		
 		return new String(wSpace);
 	}	
 	
 	public String convertChartoUnderscore(String w) {
-		int letters = w.length();
-		char [] charUnder = new char[letters];
+		
+		int letters = w.length();		
+		this.charUnder = new char[letters];
 		
 		for(int i =0; i < w.length(); i++) {
 			char c = w.charAt(i);
 			if(c != ' ') {
-				charUnder[i] = '_';
+				this.charUnder[i] = '_';
 			}
 		}
-		return new String(charUnder);
+		return new String(this.charUnder);
+	}
+	
+	public void pickTheChar(String w) {
+		Scanner sc = new Scanner(System.in);
 		
+			while(this.tries < 6) {	
+				String picS = sc.nextLine();	// get the option for user
+				char picC = picS.charAt(0);  // put "char" of the String into var to compare
+				
+				for(int i =0; i < w.length(); i++) {
+					if(picC == w.charAt(i)) {
+						this.charUnder[i] = w.charAt(i);
+						this.charUnder[i+1] = ' ';
+					} 
+				}
+				System.out.println(new String(charUnder));
+				this.tries ++;
+			}	
+		
+		sc.close();
 	}
 	
 }	
