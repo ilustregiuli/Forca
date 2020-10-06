@@ -82,13 +82,22 @@ public class Forca {
 				String picS = sc.nextLine();	// get the option for user
 				char picC = picS.charAt(0);  // put "char" of the String into var to compare
 				
+				boolean correct = false;
+				
 				for(int i =0; i < w.length(); i++) {
+					
 					if(picC == w.charAt(i)) {
-						this.charUnder[i] = w.charAt(i);
+						this.charUnder[i] = picC;
+						 correct = true;
 					} 
 				}
+				
+				if (!correct){
+					this.tries ++;
+				}
+				
 				System.out.println(new String(charUnder));
-				this.tries ++;
+			
 			}	
 		
 		sc.close();
