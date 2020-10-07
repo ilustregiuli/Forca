@@ -18,9 +18,17 @@ public class RandomWord {
 		String w8 = "a f r i c a d o s u l";
 		String w9 = "e g i t o";
 		String w10 = "p a r a g u a i";
+		String w11 = "a r a b i a s a u d i t a";
+		String w12 = "e q u a d o r";
+		String w13 = "s u i c a";
+		String w14 = "e s p a n h a";
+		String w18 = "m o n g o l i a";
+		String w15 = "c h i n a";
+		String w16 = "a u s t r a l i a";
+		String w17 = "m e x i c o";
 		
 		Random r = new Random();
-		int x = r.nextInt(10) + 1;
+		int x = r.nextInt(17) + 1;
 		
 		switch (x) {
 		
@@ -52,6 +60,30 @@ public class RandomWord {
 			break;
 			
 			case 10: this.randomWord = w10;
+			break;
+			
+			case 11:	this.randomWord = w11;
+			break;
+
+			case 12: this.randomWord = w12;
+			break;
+			
+			case 13: this.randomWord = w13;
+			break;
+			
+			case 14: this.randomWord = w14;
+			break;
+			
+			case 15: this.randomWord = w15;
+			break;
+			
+			case 16: this.randomWord = w16;
+			break;
+			
+			case 17: this.randomWord = w17;
+			break;
+			
+			case 18: this.randomWord = w18;
 			break;
 			
 			default: System.out.println("System Error!");
