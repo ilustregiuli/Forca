@@ -30,7 +30,7 @@ public class Forca {
 		this.word = rw.getRandomWord();
 		
 //		System.out.println((this.putSpaceWord(this.word)));
-		System.out.println(this.word);
+//		System.out.println(this.word);
 		System.out.println(this.convertChartoUnderscore(this.word));
 		System.out.println(" ");
 		System.out.println("Choose a letter: ");
@@ -94,6 +94,12 @@ public class Forca {
 				
 				if (!correct){
 					this.tries ++;
+					if(tries == 6) {
+						System.out.println("Acabaram as tentativas! Jogo encerrado!");
+					} else {
+						System.out.println("Letra errada!");
+						System.out.println("Você tem mais " + (6 - tries) + " tentativas!");
+					}
 				}
 				
 				System.out.println(new String(charUnder));
