@@ -78,7 +78,7 @@ public class Forca {
 	public void pickTheChar(String w) {
 		Scanner sc = new Scanner(System.in);
 		boolean continueGame = true;	// true = don't discover word / false = discover word
-		
+		String lettersWrongs = "";
 			while(this.tries < 6 && continueGame == true) {	
 				String picS = sc.nextLine();	// get the option for user
 				char picC = picS.charAt(0);  // put "char" of the String into var to compare
@@ -86,7 +86,6 @@ public class Forca {
 				boolean correct = false;
 				
 				for(int i =0; i < w.length(); i++) {
-					
 					if(picC == w.charAt(i)) {
 						this.charUnder[i] = picC;
 						 correct = true;
@@ -94,24 +93,28 @@ public class Forca {
 				}
 				
 				if (!correct){
+					lettersWrongs = lettersWrongs +" " + picC;
 					this.tries ++;
 					if(tries == 6) {
 						System.out.println("Acabaram as tentativas! Jogo encerrado!");
 					} else {
 						System.out.println("Letra errada!");
+						System.out.println("Letras já utilizadas: ");
+						System.out.println(lettersWrongs);
 						System.out.println("Você tem mais " + (6 - tries) + " tentativas!");
 					}
 				}
 				
 				System.out.println(new String(charUnder));
 				continueGame = false;
-				for(int i = 0; i < charUnder.length; i++) {			//method for indicate victory
-					if(charUnder[i] == '_') {
+				
+				for(char cUnder : charUnder) {	//method for indicate victory
+					if(cUnder == '_') {
 						continueGame = true;
 						break;
-					} 
-				} // end For
-				
+					}
+				}
+					
 				if(!continueGame) {
 					System.out.println("Parabéns! Você acertou a palavra!");
 				}
