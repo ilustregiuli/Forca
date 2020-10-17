@@ -9,14 +9,16 @@ public class Forca {
 	private char[] wSpace;
 	private char[] charUnder;
 	private String charConverted;
+	private Gallows gallows; 
 	
 	public Forca() {
 		//method to raffle 
 		RandomWord rw = new RandomWord();
 		this.word = rw.getRandomWord();
-		
+		gallows = new Gallows();
 //		System.out.println(this.word);
-		this.drawGallows(0);
+		
+		gallows.drawGallows(0);
 		this.charConverted = this.convertChartoUnderscore(this.word);
 		System.out.println(" ");
 		System.out.println("Choose a letter: ");
@@ -61,7 +63,7 @@ public class Forca {
 				if (!correct){
 					lettersWrongs = lettersWrongs +" " + picC;
 					this.tries ++;
-					this.drawGallows(tries);
+					gallows.drawGallows(tries);
 					if(tries == 6) {
 						System.out.println("Acabaram as tentativas! Jogo encerrado!");
 					} else {
@@ -90,152 +92,5 @@ public class Forca {
 		sc.close();
 	}
 	
-	public void drawGallows(int errors) {
-		switch(errors) {
-		case 0:
 		
-		// draw the gallows
-				System.out.println("    ");
-				System.out.println("																");
-				System.out.println("    *************												");
-				System.out.println("    *		*");
-				System.out.println("    *		*");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println("    *");
-				System.out.println(" *********");
-				break;
-				
-		case 1:		
-			System.out.println("    ");
-			System.out.println("																");
-			System.out.println("    *************												");
-			System.out.println("    *		*");
-			System.out.println("    *		*");
-			System.out.println("    *           00");
-			System.out.println("    *          0..0");
-			System.out.println("    *           **");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println(" *********");
-			break;
-
-		
-		case 2:
-			System.out.println("    ");
-			System.out.println("																");
-			System.out.println("    *************												");
-			System.out.println("    *		*");
-			System.out.println("    *		*");
-			System.out.println("    *           00");
-			System.out.println("    *          0..0");
-			System.out.println("    *           **");
-			System.out.println("    *          0000");
-			System.out.println("    *          0000");
-			System.out.println("    *          0000");
-			System.out.println("    *          0000");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println(" *********");
-			break;
-
-			
-			
-		case 3:
-			System.out.println("    ");
-			System.out.println("																");
-			System.out.println("    *************												");
-			System.out.println("    *		*");
-			System.out.println("    *		*");
-			System.out.println("    *           00");
-			System.out.println("    *          0..0");
-			System.out.println("    *           **");
-			System.out.println("    *         /0000");
-			System.out.println("    *        / 0000");
-			System.out.println("    *       /  0000");
-			System.out.println("    *          0000");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println(" *********");
-			break;
-
-			
-		case 4:
-			System.out.println("    ");
-			System.out.println("																");
-			System.out.println("    *************												");
-			System.out.println("    *		*");
-			System.out.println("    *		*");
-			System.out.println("    *           00");
-			System.out.println("    *          0..0");
-			System.out.println("    *           **");
-			System.out.println("    *         /0000\\");
-			System.out.println("    *        / 0000 \\");
-			System.out.println("    *       /  0000  \\");
-			System.out.println("    *          0000");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println("    *");
-			System.out.println(" *********");
-			break;
-			
-		case 5:
-			System.out.println("    ");
-			System.out.println("																");
-			System.out.println("    *************												");
-			System.out.println("    *		*");
-			System.out.println("    *		*");
-			System.out.println("    *           00");
-			System.out.println("    *          0..0");
-			System.out.println("    *           **");
-			System.out.println("    *         /0000\\");
-			System.out.println("    *        / 0000 \\");
-			System.out.println("    *       /  0000  \\");
-			System.out.println("    *          0000");
-			System.out.println("    *          |");
-			System.out.println("    *          |");
-			System.out.println("    *          |");
-			System.out.println("    *         --");
-			System.out.println(" *********");
-			break;	
-		case 6:
-			System.out.println("    ");
-			System.out.println("																");
-			System.out.println("    *************		YOU DEAD!!!!			");
-			System.out.println("    *		*");
-			System.out.println("    *		*");
-			System.out.println("    *           00");
-			System.out.println("    *          0xx0");
-			System.out.println("    *            O");
-			System.out.println("    *         /0000\\");
-			System.out.println("    *        / 0000 \\");
-			System.out.println("    *       /  0000  \\");
-			System.out.println("    *          0000");
-			System.out.println("    *          |  |");
-			System.out.println("    *          |  |");
-			System.out.println("    *          |  |");
-			System.out.println("    *         --  --");
-			System.out.println(" *********");
-			break;	
-
-
-		}
-	}
-	
 }	
