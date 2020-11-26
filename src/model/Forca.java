@@ -1,4 +1,4 @@
-package main;
+package model;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class Forca {
 	private int tries = 0;
 	private char[] wSpace;
 	private char[] charUnder;
-	private String charConverted;
+//	private String charConverted;
 	private Gallows gallows; 
 	
 	public Forca() {
@@ -19,7 +19,7 @@ public class Forca {
 //		System.out.println(this.word);
 		
 		gallows.drawGallows(0);
-		this.charConverted = this.convertChartoUnderscore(this.word);
+		System.out.println(this.convertChartoUnderscore(this.word)); 
 		System.out.println(" ");
 		System.out.println("Choose a letter: ");
 		this.pickTheChar(this.word);
@@ -68,9 +68,11 @@ public class Forca {
 						System.out.println("Acabaram as tentativas! Jogo encerrado!");
 					} else {
 						System.out.println("Letra errada!");
+						System.out.println("Você tem mais " + (6 - tries) + " tentativas!");
+						System.out.println(" ");
 						System.out.println("Letras já utilizadas: ");
 						System.out.println(lettersWrongs);
-						System.out.println("Você tem mais " + (6 - tries) + " tentativas!");
+						System.out.println(" ");
 					}
 				}
 				

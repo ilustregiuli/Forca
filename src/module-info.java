@@ -6,4 +6,5 @@
  *
  */
 module forca {
+	requires java.sql;
 }

@@ -1,4 +1,4 @@
-package main;
+package model;
 
 import java.util.Random;
 
@@ -9,7 +9,7 @@ public class RandomWord {
 	public RandomWord () {
 		
 		String w1 = "b r a s i l";
-		String w2 = "a r g e n t i n a";
+		String w2 = "a r g e n t i n a"; 
 		String w3 = "j a p a o";
 		String w4 = "e s t a d o s u n i d o s";
 		String w5 = "a l e m a n h a";
